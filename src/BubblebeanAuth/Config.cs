@@ -22,7 +22,7 @@ namespace BubblebeanAuth
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("api", "Bubblebean API")
             };
         }
 

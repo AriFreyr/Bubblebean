@@ -48,7 +48,7 @@ namespace Bubblebean
 
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://localhost:5000",
+                Authority = Configuration.GetSection("AuthUrl").Value,
                 RequireHttpsMetadata = false,
 
                 ApiName = "api"
