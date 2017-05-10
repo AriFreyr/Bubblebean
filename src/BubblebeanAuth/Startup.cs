@@ -96,6 +96,11 @@ namespace BubblebeanAuth
 
             // Adds IdentityServer
             app.UseIdentityServer();
+            
+             using (var context = new ApplicationDbContext(app.ApplicationServices.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
+            {
+                context.Database.Migrate();
+            }
 
             app.UseMvc(routes =>
             {
